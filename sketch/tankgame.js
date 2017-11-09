@@ -15,7 +15,7 @@ var contEnemigos=200;
 var nuevoE;
 
 function setup(nm) {
-    //alert("START");
+
     if(nm===30) global=1;
     else if(nm===40) global=2;
     else if(nm===50) global=3;
@@ -49,6 +49,7 @@ function setup(nm) {
 }
 
 function draw() {
+
     background(51);
     tanke.show();
     verVidas();
@@ -119,11 +120,13 @@ function draw() {
         muros[i].show();
     }
 
-    for (var i = 0; i < enemis.length; i++){
-        enemis[i].actualizar();
+    for (var i = 0; i < enemis.length; i++){//actualiza los enemigos e indica si mpover o disparar
         enemis[i].move();
+        enemis[i].actualizar();
         enemis[i].show();
     }
+
+
     for (var i = 0; i < objetivos.length; i++){
         objetivos[i].show();
     }
@@ -175,7 +178,7 @@ function draw() {
     if(objetivos.length===0 && global === 3){
         alert("FELICITACIONES !!!!!  El juego se reiniciará");
         global=0;
-        setup(0);
+        setup(30);
     }
 }
 

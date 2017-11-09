@@ -7,7 +7,7 @@ function Drop(x, y,mira,equipo) {
     this.equipo=equipo;
 
     this.show = function() {
-        noStroke();
+        //noStroke();
         fill(150, 0, 255);
         rect(this.x, this.y,5,5);
     }

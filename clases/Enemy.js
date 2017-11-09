@@ -9,10 +9,10 @@ function Enemy(x, y, l) {
     this.ydir = 0;
     this.speed = l;
     this.apunta="right";
-    this.contador=50;
-    this.cdisparo=100;
+    this.contador=0;
+    this.cdisparo=51;
     this.disparo=false;
-    this.mov=0;
+    this.mov=1;
 
     this.herir = function() {
         this.vida-=1;

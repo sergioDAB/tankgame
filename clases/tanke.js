@@ -50,6 +50,7 @@ function Tanke() {
         if(this.vida===0){
             alert("GAMER OVER       El juego se reiniciará!");
             setup(30);
+
         }
     }
 
