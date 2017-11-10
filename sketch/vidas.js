@@ -1,5 +1,5 @@
-function verVidas() {
-    var vidas=tanke.vida;
+function verVidas(tank) {
+    var vidas=tank.vida;
     if(vidas===3)
         document.getElementById("p1").innerHTML = "3";
     else if(vidas===2)

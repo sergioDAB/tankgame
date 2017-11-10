@@ -45,13 +45,13 @@ function Tanke() {
 
     this.matar = function () {
         this.vida-=1;
-    }
-    this.aviso = function () {
+        verVidas(this);
         if(this.vida===0){
             alert("GAMER OVER       El juego se reiniciará!");
             setup(30);
 
         }
     }
+
 
 }

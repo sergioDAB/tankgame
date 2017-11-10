@@ -52,7 +52,7 @@ function draw() {
 
     background(51);
     tanke.show();
-    verVidas();
+    verVidas(tanke);
     tanke.move();
     pared.wall();
 
@@ -101,7 +101,7 @@ function draw() {
             if(drops[i].hits(tanke)){
                 tanke.matar();
                 drops[i].evaporate();
-                tanke.aviso();
+                //tanke.perder();
             }
         }
         for (var j = 0; j < objetivos.length; j++) { // si las balas mias golpean un objetivo
