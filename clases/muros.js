@@ -13,4 +13,12 @@ function Muro(x, y) {
         rect(this.x, this.y,40,40);
     }
 
+    this.wall = function(){
+        fill(999,999,990,94);
+
+        rect(0,0,40,600);
+        rect(560,0,40,600);
+        rect(40,0,520,40);
+        rect(40,560,520,40);
+    }
 }

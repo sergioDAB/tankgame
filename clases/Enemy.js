@@ -32,7 +32,7 @@ function Enemy(x, y, l) {
         }
 
         if(this.mov===1){
-            if(this.x <= 0){
+            if(this.x <= 40){
                 this.xdir = 0;
                 this.ydir =0;
                 this.apunta="left";
@@ -46,7 +46,7 @@ function Enemy(x, y, l) {
             }
         }
         else if(this.mov===2){
-            if(this.y <= 0){
+            if(this.y <= 40){
                 this.ydir = 0;
                 this.xdir =0;
                 this.apunta="up";
@@ -60,7 +60,7 @@ function Enemy(x, y, l) {
             }
         }
         else if(this.mov===3){
-            if(this.x >= 560){
+            if(this.x >= 520){
                 this.xdir = 0;
                 this.ydir = 0;
                 this.apunta="right";
@@ -74,7 +74,7 @@ function Enemy(x, y, l) {
             }
         }
         else if(this.mov===4){
-            if(this.y >= 560){
+            if(this.y >= 520){
                 this.ydir = 0; // no hace nada
                 this.xdir = 0;
                 this.apunta="down";

@@ -20,28 +20,28 @@ function setup(nm) {
     else if(nm===40) global=2;
     else if(nm===50) global=3;
     nm2=nm;
-    createCanvas(600, 600);
+    createCanvas(600,600);
     tanke = new Tanke();
     pared = new Muro();
     enemy = new Enemy();
     objetivo=new Objetivo();
 
     for (var i = 0; i < nm; i++) { // se crean los muros
-        r=Math.floor(Math.random()*(0-15)+15);
-        r2=Math.floor(Math.random()*(0-15)+15);
+        r=Math.floor(Math.random()*(1-14)+14);
+        r2=Math.floor(Math.random()*(1-14)+14);
         muros[i] = new Muro(r*40, r2*40); // recibe dos eje X,Y
     }
 
     for(var i=0; i< nm/6; i++){ // se crean los enemigos
-        x=Math.floor(Math.random()*(0-15)+15);
-        y=Math.floor(Math.random()*(1-15)+15);
+        x=Math.floor(Math.random()*(1-14)+14);
+        y=Math.floor(Math.random()*(1-14)+14);
         nivel=Math.floor(Math.random()*(1-4)+4);
         enemis[i] = new Enemy(x*40, y*40,nivel);
     }
 
     for(var i=0; i< nm/3; i++){// se crean los objetivos
-        x=Math.floor(Math.random()*(0-15)+15);
-        y=Math.floor(Math.random()*(1-15)+15);
+        x=Math.floor(Math.random()*(1-14)+14);
+        y=Math.floor(Math.random()*(1-14)+14);
         tipoObjetivo=Math.floor(Math.random()*(1-3)+3);
         objetivos[i] = new Objetivo(x*40, y*40,tipoObjetivo);
         objetivos[i].setvida();
@@ -54,12 +54,13 @@ function draw() {
     tanke.show();
     verVidas();
     tanke.move();
+    pared.wall();
 
     //agregar enemigos cada cierto tiempo
     contEnemigos-=1;
     if(contEnemigos <= 0 && enemis.length <= nm2/6){
-        x=Math.floor(Math.random()*(0-15)+15);
-        y=Math.floor(Math.random()*(1-15)+15);
+        x=Math.floor(Math.random()*(1-14)+14);
+        y=Math.floor(Math.random()*(1-14)+14);
         nivel=Math.floor(Math.random()*(1-4)+4);
         nuevoE = new Enemy(x*40, y*40,nivel);
         enemis.push(nuevoE);
@@ -70,7 +71,7 @@ function draw() {
         drops[i].show();
         drops[i].move();
 
-        if(drops[i].x<=0 ||drops[i].x>=600 || drops[i].y<=0 || drops[i].y>=600){//si se sale de los limites
+        if(drops[i].x<=40 ||drops[i].x>=560 || drops[i].y<=40 || drops[i].y>=560){//si se sale de los limites
             drops[i].evaporate();
         }
 
@@ -195,25 +196,25 @@ function keyPressed() {
     }
 
     else if (keyCode === RIGHT_ARROW) {
-        if(tanke.x>=560 && tanke.x <= 600){
+        if(tanke.x>=550 && tanke.x <= 560){
             tanke.setDir(0,0,"right");
         }
         else tanke.setDir(1,0,"right");
     }
     else if (keyCode === LEFT_ARROW) {
-        if(tanke.x>=0 && tanke.x <= 10){
+        if(tanke.x>=40 && tanke.x <= 50){
             tanke.setDir(0,0,"left");
         }
         else tanke.setDir(-1,0,"left");
     }
     else if (keyCode === UP_ARROW) {
-        if(tanke.y>=0 && tanke.y <= 10){
+        if(tanke.y>=40 && tanke.y <= 50){
             tanke.setDir(0,0,"up");
         }
         else tanke.setDir(0,-1,"up");
     }
     else if (keyCode === DOWN_ARROW) {
-        if(tanke.y>=560 && tanke.y <= 600){
+        if(tanke.y>=520 && tanke.y <= 560){
             tanke.setDir(0,0,"down");
         }
         else tanke.setDir(0,1,"down");
