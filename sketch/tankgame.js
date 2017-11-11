@@ -14,10 +14,11 @@ var objetivo;
 var contEnemigos=200;
 var nuevoE;
 
+alert("BIENVENIDO A TANK-GAME  \n\n -> Seleccione un nivel \n -> Se mueve con las flechas \n -> Dispara con espacio");
 
 function setup(nm) {
     //frameRate(2);
-    presionado=false;
+
     if(nm===30) global=1;
     else if(nm===40) global=2;
     else if(nm===50) global=3;
@@ -198,30 +199,26 @@ function keyPressed() {
         drops.push(drop);
     }
 
-    if (keyIsDown(RIGHT_ARROW)) {
-        presionado=true;
+    if (keyCode===RIGHT_ARROW) {
         if(tanke.x>=500 && tanke.x <= 520){
             console.log("limite de arriba");
             tanke.setDir(0,0,"right");
         }
         else tanke.setDir(1,0,"right");
     }
-    if (keyIsDown(LEFT_ARROW)) {
-        presionado=true;
+    if (keyCode===LEFT_ARROW ) {
         if(tanke.x>=40 && tanke.x <= 50){
             tanke.setDir(0,0,"left");
         }
         else tanke.setDir(-1,0,"left");
     }
     if (keyCode ===UP_ARROW) {
-        presionado=true;
         if(tanke.y>=40 && tanke.y <= 50){
             tanke.setDir(0,0,"up");
         }
         else tanke.setDir(0,-1,"up");
     }
     if (keyCode === DOWN_ARROW) {
-        presionado=true;
         if(tanke.y>=520 && tanke.y <= 560){
             tanke.setDir(0,0,"down");
         }
