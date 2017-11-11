@@ -14,8 +14,10 @@ var objetivo;
 var contEnemigos=200;
 var nuevoE;
 
-function setup(nm) {
 
+function setup(nm) {
+    //frameRate(2);
+    presionado=false;
     if(nm===30) global=1;
     else if(nm===40) global=2;
     else if(nm===50) global=3;
@@ -39,7 +41,7 @@ function setup(nm) {
         enemis[i] = new Enemy(x*40, y*40,nivel);
     }
 
-    for(var i=0; i< nm/3; i++){// se crean los objetivos
+    for(var i=0; i< nm/6; i++){// se crean los objetivos
         x=Math.floor(Math.random()*(1-14)+14);
         y=Math.floor(Math.random()*(1-14)+14);
         tipoObjetivo=Math.floor(Math.random()*(1-3)+3);
@@ -187,6 +189,7 @@ function keyReleased() {
     if (key != ' ') {
         tanke.setDir(0,0,tanke.apunta);
     }
+
 }
 
 function keyPressed() {
@@ -195,29 +198,35 @@ function keyPressed() {
         drops.push(drop);
     }
 
-    else if (keyCode === RIGHT_ARROW) {
-        if(tanke.x>=550 && tanke.x <= 560){
+    if (keyIsDown(RIGHT_ARROW)) {
+        presionado=true;
+        if(tanke.x>=500 && tanke.x <= 520){
+            console.log("limite de arriba");
             tanke.setDir(0,0,"right");
         }
         else tanke.setDir(1,0,"right");
     }
-    else if (keyCode === LEFT_ARROW) {
+    if (keyIsDown(LEFT_ARROW)) {
+        presionado=true;
         if(tanke.x>=40 && tanke.x <= 50){
             tanke.setDir(0,0,"left");
         }
         else tanke.setDir(-1,0,"left");
     }
-    else if (keyCode === UP_ARROW) {
+    if (keyCode ===UP_ARROW) {
+        presionado=true;
         if(tanke.y>=40 && tanke.y <= 50){
             tanke.setDir(0,0,"up");
         }
         else tanke.setDir(0,-1,"up");
     }
-    else if (keyCode === DOWN_ARROW) {
+    if (keyCode === DOWN_ARROW) {
+        presionado=true;
         if(tanke.y>=520 && tanke.y <= 560){
             tanke.setDir(0,0,"down");
         }
         else tanke.setDir(0,1,"down");
+
     }
 }
 

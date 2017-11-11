@@ -10,7 +10,7 @@ function Enemy(x, y, l) {
     this.speed = l;
     this.apunta="right";
     this.contador=0;
-    this.cdisparo=51;
+    this.cdisparo=50;
     this.disparo=false;
     this.mov=1;
 
@@ -26,9 +26,9 @@ function Enemy(x, y, l) {
 
     this.actualizar = function() {
         this.cdisparo-=1;
-        if(this.contador===0){// genera otro movimiento despues de 50 ciclos
+        if(this.contador===0){// genera otro movimiento despues de N ciclos
             this.mov=Math.floor(Math.random()*(1-5)+5);
-            this.contador=50;
+            this.contador=l*30;
         }
 
         if(this.mov===1){
@@ -59,8 +59,8 @@ function Enemy(x, y, l) {
                 this.contador-=1;
             }
         }
-        else if(this.mov===3){
-            if(this.x >= 520){
+        else if(this.mov===3){// derecha
+            if(this.x >= 520){// si  choca con el limite
                 this.xdir = 0;
                 this.ydir = 0;
                 this.apunta="right";
@@ -96,9 +96,7 @@ function Enemy(x, y, l) {
     }
 
     this.show = function() {
-        noStroke(); // para que no se le dibujen los bordes
-        //fill(288,288,60,60);
-        //rect(this.x, this.y,40,40);
+
         if(this.nivel===1){                              // nivel 1
             fill(218,227,13,80);
             rect(this.x, this.y,40,40);

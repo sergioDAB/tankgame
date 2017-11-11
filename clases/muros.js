@@ -8,7 +8,7 @@ function Muro(x, y) {
     }
 
     this.show = function() {
-        noStroke();
+        //noStroke();
         fill(999,999,990,94);
         rect(this.x, this.y,40,40);
     }

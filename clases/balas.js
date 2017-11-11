@@ -28,20 +28,20 @@ function Drop(x, y,mira,equipo) {
 
     this.move = function() {
        if(mira==="right"){
-           this.x = this.x +7;
+           this.x = this.x +10;
            this.y = this.y +0;
        }
        else if(mira==="left"){
-           this.x = this.x +-7;
+           this.x = this.x +-10;
            this.y = this.y +0;
        }
        else if(mira==="up"){
            this.x = this.x +0;
-           this.y = this.y +-7;
+           this.y = this.y +-10;
        }
        else if(mira==="down"){
            this.x = this.x +0;
-           this.y = this.y +7;
+           this.y = this.y +10;
        }
 
     }
