@@ -14,7 +14,7 @@ var objetivo;
 var contEnemigos=200;
 var nuevoE;
 
-alert("BIENVENIDO A TANK-GAME  \n\n -> Seleccione un nivel \n -> Se mueve con las flechas \n -> Dispara con espacio");
+alert("BIENVENIDO A TESTE MARAVILLOSO JUEGO \n\n INDICACIONES  \n\n -> Seleccione un nivel \n -> Se mueve con las flechas \n -> Dispara con espacio");
 
 function setup(nm) {
     //frameRate(2);
