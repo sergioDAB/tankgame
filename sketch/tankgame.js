@@ -14,7 +14,7 @@ var objetivo;
 var contEnemigos=200;
 var nuevoE;
 
-alert("BIENVENIDO A TESTE MARAVILLOSO JUEGASO \n\n INDICACIONES  \n\n -> select level \n -> move with keys \n -> shot with space");
+alert("WELCOME TO THIS GAME \n\n INDICATIONS  \n\n -> select level \n -> move with keys \n -> shot with space");
 
 function setup(nm) {
     //frameRate(2);
